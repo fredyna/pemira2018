@@ -1,0 +1,61 @@
+body {
+	font-family: Roboto;
+	font-size: 14px;
+	position:relative;
+	min-width:100%;
+	min-height:100%;
+	overflow-x: hidden;
+	background-image:url('../images/bg-login.png');
+}
+
+header {
+	margin-top:10px;
+	margin-bottom: 20px;
+}
+
+header h3{
+	text-align: center;
+	margin:5px;
+}
+
+header #logopoltek{
+	width:125px;
+	height:130px;
+	display:block;
+	margin:auto;
+}
+
+header #logopemira{
+	width:130px;
+	height:130px;
+	display:block;
+	margin:auto;
+}
+
+#content h3{
+	text-align:center;
+}
+
+#content img{
+	display:block;
+	margin:auto;
+	height:400px;
+}
+
+#content .visimisi{
+	margin-left:20px;
+	margin-right: 20px;
+}
+
+footer{
+	margin-top:100px;
+}
+
+@media (max-width: 767px) {
+
+	header #logopoltek,
+	header #logopemira{
+		display: none;
+	}
+
+}

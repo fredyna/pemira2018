@@ -1,0 +1,52 @@
+/* lg */ 
+@media (min-width: 1200px) {
+
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+ 	
+}
+
+/* xs */
+@media (max-width: 767px) {
+	body {
+		font-size: 14px;
+	}
+	#home-slider .caption h1 {
+		font-size: 40px;
+	}
+	#home-slider .caption {
+		font-size: 15px;
+		padding: 0 30px;
+	}
+	.left-control, .right-control {
+		font-size: 20px;
+		height: 30px;
+		line-height: 25px;
+		width: 30px;
+	}
+	#home-slider:hover .right-control {
+		right: 15px;
+	}
+	#home-slider:hover .left-control {
+		left: 15px;
+	}
+	.caption .btn-start {
+		font-size: 12px;
+		padding: 10px 30px;
+	}
+	
+}
+
+/* XS Portrait */
+@media (max-width: 479px) {
+  
+	
+}
+

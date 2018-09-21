@@ -1,0 +1,227 @@
+/*#########################################
+
+	Pemira PHB 2017 
+	Created by 
+	Fredy Nur Apriyanto
+	DIV Teknik Informatika
+
+###########################################*/
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(../fonts/roboto/Roboto.woff2) format('woff2');
+}
+
+html{
+	height:100%;
+	box-sizing:border-box;
+}
+
+body {
+	font-family: Roboto;
+	font-size: 14px;
+	position:relative;
+	min-width:100%;
+	min-height:100%;
+	overflow-x: hidden;
+	background-image:url('../images/bg-login.png');
+}
+
+/* Admin & Petugas */
+
+	/* Navbar */
+
+.navbar-admin {
+	margin-bottom:0px;
+	background-color: #1D5495;
+	border-color:#1D5495;
+	z-index:99;
+	box-shadow:0 3px 10px 0px rgba(0, 0, 0, 0.29);
+}
+.navbar-admin .navbar-brand{
+	line-height: 12px;
+	color:#fff;
+} 
+.navbar-admin .navbar-brand a{
+	color:#fff;
+	text-decoration: none;
+}
+.navbar-admin .navbar-brand:hover,
+.navbar-admin .navbar-brand a:hover{
+	color:#e7e7e7;
+}
+.admin-form .panel-group{
+	margin-top:25%;
+}
+.admin-form .form-horizontal{
+	margin-top:20px;
+}
+.admin-form .form-group{
+	margin-left:25px;
+	margin-right:25px;
+}
+.admin-form .form-group p{
+	color:#ff0000;
+	padding:0;
+	margin:0;
+}
+.navbar-admin .navbar-right li a{
+	color:#fff;
+}
+.navbar-admin .navbar-right li a:hover{
+	color:#e7e7e7;
+	border-color:transparent;
+}
+.navbar-admin .navbar-right .dropdown-menu{
+	min-width:120px;
+	background-color: #f1f1f1;
+}
+.navbar-admin .navbar-right .dropdown-menu a{
+	color:#333;
+}
+.navbar-admin .navbar-right .dropdown-menu a:hover{
+	color:#777;
+}
+
+	/* End Navbar */
+
+	/* Side Navbar */
+.side-nav {
+	background-color:#266bc0;	
+	margin-top:0px;
+	width:17%;
+	height:100%;
+	padding-right:0px;
+	position: fixed;
+	overflow-y: auto;
+}
+.side-nav .side-nav-header{
+	margin-bottom:20px;
+	padding-left:15px;
+	padding-top:15px;
+	padding-bottom:15px;
+	background-color:#1d5495;
+
+}
+.side-nav .side-nav-header i{
+	margin-left:10px;
+	margin-right:5px;
+	color:#000;
+}
+.side-nav .side-nav-header span{
+	text-align: center;
+	color:#fff;
+	font-size: 16px;
+}
+.side-nav .panel{
+	background-color: transparent;
+	width:100%;
+	margin-left:7px;
+	border:none;
+	box-shadow:none;
+}
+.side-nav .panel .active{
+	background-color:#1D5495;
+}
+.side-nav .panel-heading{
+	padding-top:5px;
+	padding-bottom: 5px;
+	background-color: transparent;
+	border:none;
+}
+.side-nav .panel-heading a{
+	color:#f3f3f3;
+	text-decoration: none;
+}
+.side-nav .panel-heading i{
+	margin-right:10px;
+}
+.side-nav .panel-heading i.fa-caret-down{
+	margin-left:10px;
+	margin-right:0px;
+}
+.panel-group .panel-heading + .panel-collapse > .list-group{
+	border-top:none;
+}
+.side-nav .list-group .list-group-item{
+	background-color:transparent;
+	padding-left:30px;
+	border:none;
+}
+.side-nav .list-group .list-group-item a{
+	color:#f3f3f3;
+	text-decoration: none;
+}
+.side-nav .list-group .list-group-item i{
+	margin-right:5px;
+}
+	/* End Navbar */
+
+	/* Content Admin */
+.content-admin{
+	padding-left:0px;
+	padding-right:0px;
+}
+.content-admin .well{
+	padding:5px;
+	margin-bottom:0px;
+}
+.content-admin .container-fluid{
+	padding-left:0px;
+}
+.content-admin .jumbotron{
+	padding:20px;
+	background-color: #F4F4F4;
+}
+.content-admin .jumbotron h3{
+	margin:0px;
+}
+.content-admin .jumbotron p{
+	font-size: 14px;
+	color:#000;
+}
+.content-admin .jumbotron p span{
+	font-weight: 600;
+}
+.content-admin .jumbotron p.paragraf{
+	text-indent: 30px;
+}
+
+.content-admin .menu-content{
+	background-color: #93bbeb;
+	color:#0000ff;
+	width:100%;
+	height:150px;
+	margin:auto;
+	display:block;
+}
+.content-admin .menu-content i{
+	display:block;
+	text-align:center;
+	padding-top:30px;	
+}
+.content-admin .menu-content span{
+	display:block;
+	text-align:center;
+	margin-top:20px;
+	font-size: 16px;
+}
+	/* End Content Admin */
+
+/* End Admin & Petugas */
+
+/* footer */
+
+footer {
+	position:absolute;
+	bottom:0;
+	right:0;
+	left:0;
+}
+footer p{
+	margin-bottom:20px;
+}
+
+/* End Footer */

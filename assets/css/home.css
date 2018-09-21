@@ -1,0 +1,312 @@
+/*
+  Theme Name: Pemilu Raya Politeknik Harapan Bersama
+  Author    : Fredy Nur Apriyanto
+  Tahun     : 2017
+*/
+
+/*************************
+*******Typography******
+**************************/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #666;
+  background-color: #fff;
+  height:100%;
+  width:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+
+a:focus, 
+a:hover {
+  text-decoration: none;
+  outline: none
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  background: #fff;
+}
+
+.preloader > i {
+  position: absolute;
+  font-size: 36px;
+  line-height: 36px;
+  top: 50%;
+  left: 50%;
+  height: 36px;
+  width: 36px;
+  margin-top: -15px;
+  margin-left: -15px;
+  display: inline-block;
+}
+
+
+/*************************
+********Home CSS**********
+**************************/
+header{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+header .item{
+  position:absolute;
+  height:100%;
+  width:100%;
+  background-color:#fa9b1d;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home-slider img{
+  width:155px;
+  height:200px;
+  padding-top:35px;
+}
+
+#home-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+#home-slider .caption {
+  position: absolute;
+  top: 50%;
+  margin-top: -104px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 15;
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+}
+
+#home-slider .caption h1 {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+#home-slider .caption h1 span{
+  color:#fa9b1d;
+}
+#home-slider .caption p span{
+  background-color:#fa9b1d;
+}
+
+.caption .btn-start {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding:14px 40px;
+  border: 1px solid #6e6d6c;
+  border-radius: 4px;
+  margin-top: 40px;
+}
+
+.caption .btn-start:hover {
+  color: #fff;
+}
+
+
+.left-control, .right-control {
+  position: absolute;
+  top: 45%;
+  height: 51px;
+  width: 51px;
+  line-height: 48px;
+  border-radius: 50%;
+  border:1px solid #fff;  
+  z-index: 20;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.left-control {
+  left: -51px
+} 
+
+.right-control {
+  right: -51px;
+}
+
+.left-control:hover, 
+.right-control:hover {
+  color: #fff;
+}
+
+#home-slider:hover .left-control {
+  left:30px
+} 
+
+#home-slider:hover .right-control {
+  right:30px
+}
+
+#home-slider .fa-hand-o-up {
+  position: absolute;
+  left: 50%;
+  bottom: 75px;
+  color: #fff;
+  display: inline-block;
+  width: 30px;
+  margin-left: -12px;
+  font-size: 30px;
+  line-height: 24px;
+  z-index: 999;
+  -webkit-animation: bounce 3000ms infinite;
+  animation: bounce 3000ms infinite;
+}
+
+
+.btn-submit {
+  display: block;
+  padding: 12px;
+  width: 100%;
+  color: #fff;
+  border:0;
+  margin-top: 40px;
+}
+
+/* End Home */
+
+/*---------------
+      Modal
+-----------------*/
+.modal{
+  margin-top:5%;
+}
+.modal .modal-sm{
+  width:500px;
+}
+.modal .modal-body .center-block{
+  margin-top:15px;
+  margin-bottom:15px;
+}
+.modal .modal-body .center-block img{
+  width:40px;
+  height:45px;
+  margin:auto;
+  margin-bottom:10px;
+  display:block;
+}
+.modal .modal-body .center-block{
+  width:50%;
+}
+
+/*End Modal*/
+
+
+footer {
+    position: absolute;
+    text-align: center;
+    color:#fff;
+    width: 100%;
+    bottom: 0;
+    height: 7%;
+}
+
+
+/* lg */ 
+@media (min-width: 1200px) {
+
+}
+
+/* md */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/* xs */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+  #home-slider .caption h1 {
+    font-size: 40px;
+  }
+  #home-slider .caption {
+    font-size: 15px;
+    padding: 0 30px;
+  }
+  .left-control, .right-control {
+    font-size: 20px;
+    height: 30px;
+    line-height: 25px;
+    width: 30px;
+  }
+  #home-slider:hover .right-control {
+    right: 15px;
+  }
+  #home-slider:hover .left-control {
+    left: 15px;
+  }
+  .caption .btn-start {
+    font-size: 12px;
+    padding: 10px 30px;
+  }
+  
+}
+
+/* XS Portrait */
+@media (max-width: 479px) {
+
+  .logo-poltek{
+    width:40px;
+    height:40px;
+    margin-top:7px;
+    margin-left: 10px;
+    padding-top: 0; 
+    position: fixed;
+  }
+
+  .logo-bpm{
+    width:35px;
+    height:35px;
+    margin-top:10px;
+    margin-left: 90px;
+    padding-top: 0; 
+    position: fixed;
+  }
+}
