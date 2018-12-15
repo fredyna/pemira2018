@@ -39,7 +39,7 @@
           <img class="center-block animated fadeInDownBig" src="<?php echo base_url('assets/images/pemilu.png');?>" alt="Pemilihan Raya" />
           <div class="caption">
             <h1 class="animated fadeInLeftBig">PEMILIHAN <span>RAYA</span></h1>
-            <p class="animated fadeInRightBig"><span>POLITEKNIK HARAPAN BERSAMA TAHUN 2017</span></p>
+            <p class="animated fadeInRightBig"><span>POLITEKNIK HARAPAN BERSAMA TAHUN <?php echo date('Y')?></span></p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#login" data-toggle="modal"><i class="fa fa-sign-in"></i> Login</a>
           </div>
         </div>
@@ -50,7 +50,7 @@
           <img class="center-block animated fadeInDownBig" src="<?php echo base_url('assets/images/pemilu.png');?>" alt="Ayo Memilih" />
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Ayo <span>Memilih</span></h1>
-            <p class="animated fadeInRightBig"><span>PEMILIHAN RAYA KM PHB TAHUN 2017</span></p>
+            <p class="animated fadeInRightBig"><span>PEMILIHAN RAYA KM PHB TAHUN <?php echo date('Y')?></span></p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#login" data-toggle="modal"><i class="fa fa-sign-in"></i> Login</a>
           </div>
         </div>
@@ -101,7 +101,7 @@
   </header><!--/#home-->
 
   <footer>
-    <p>&copy; 2017 BPM KM PHB Developed by <a href="http://smitcomunity.com/" target="__blank" style="color:white;">SMIT TEAM</p>
+    <p>&copy; <?php echo date('Y');?> BPM KM PHB Developed by <a href="http://smitcomunity.com/" target="__blank" style="color:white;">SMIT TEAM</p>
   </footer>
 
 </body>

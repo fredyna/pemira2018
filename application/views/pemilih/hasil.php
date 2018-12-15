@@ -26,7 +26,7 @@
 								type: "column",  
 								showInLegend: true, 
 								legendMarkerColor: "white",
-								legendText: "Calon Kahim 2017",
+								legendText: "Calon Kahim <?php echo date('Y');?>",
 								dataPoints: [      
 									<?php foreach($suara_ti as $s){ ?>
 										{y : <?php echo $s->suara;?>, label:"<?php echo $s->nama;?>"},
@@ -62,7 +62,7 @@
 								type: "column",  
 								showInLegend: true, 
 								legendMarkerColor: "white",
-								legendText: "Calon Kahim 2017",
+								legendText: "Calon Kahim <?php echo date('Y');?>",
 								dataPoints: [      
 									<?php foreach($suara_ak as $s){ ?>
 										{y : <?php echo $s->suara;?>, label:"<?php echo $s->nama;?>"},
@@ -98,7 +98,7 @@
 								type: "column",  
 								showInLegend: true, 
 								legendMarkerColor: "white",
-								legendText: "Calon Kahim 2017",
+								legendText: "Calon Kahim <?php echo date('Y');?>",
 								dataPoints: [      
 									<?php foreach($suara_kb as $s){ ?>
 										{y : <?php echo $s->suara;?>, label:"<?php echo $s->nama;?>"},
@@ -134,7 +134,7 @@
 								type: "column",  
 								showInLegend: true, 
 								legendMarkerColor: "white",
-								legendText: "Calon Kahim 2017",
+								legendText: "Calon Kahim <?php echo date('Y');?>",
 								dataPoints: [      
 									<?php foreach($suara_fm as $s){ ?>
 										{y : <?php echo $s->suara;?>, label:"<?php echo $s->nama;?>"},
@@ -170,7 +170,7 @@
 								type: "column",  
 								showInLegend: true, 
 								legendMarkerColor: "white",
-								legendText: "Calon Kahim 2017",
+								legendText: "Calon Kahim <?php echo date('Y');?>",
 								dataPoints: [      
 									<?php foreach($suara_kom as $s){ ?>
 										{y : <?php echo $s->suara;?>, label:"<?php echo $s->nama;?>"},
@@ -206,7 +206,7 @@
 								type: "column",  
 								showInLegend: true, 
 								legendMarkerColor: "white",
-								legendText: "Calon Kahim 2017",
+								legendText: "Calon Kahim <?php echo date('Y');?>",
 								dataPoints: [      
 									<?php foreach($suara_tm as $s){ ?>
 										{y : <?php echo $s->suara;?>, label:"<?php echo $s->nama;?>"},
@@ -242,7 +242,7 @@
 								type: "column",  
 								showInLegend: true, 
 								legendMarkerColor: "white",
-								legendText: "Calon Kahim 2017",
+								legendText: "Calon Kahim <?php echo date('Y')?>",
 								dataPoints: [      
 									<?php foreach($suara_te as $s){ ?>
 										{y : <?php echo $s->suara;?>, label:"<?php echo $s->nama;?>"},

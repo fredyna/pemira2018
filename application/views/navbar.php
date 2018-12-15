@@ -7,10 +7,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><span>PEMIRA</span>PHB 2017</a>
+			<a class="navbar-brand" href="#"><span>PEMIRA</span>PHB <?php echo date('Y');?></a>
 			<ul class="user-menu">
 				<li class="dropdown pull-right">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><i class="fa fa-user"></i> <?php echo $user->username;?><span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"></svg><i class="fa fa-user"></i> <?php echo $user->username;?><span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="<?php echo base_url('admin/admin/settings'); ?>"><i class="fa fa-cog"></i> Settings</a></li>
 						<li><a href="<?php echo base_url('auth/logout'); ?>"><i class="fa fa-sign-out"></i> Logout</a></li>

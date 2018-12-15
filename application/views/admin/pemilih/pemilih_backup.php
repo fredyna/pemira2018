@@ -1,5 +1,5 @@
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-	
+ <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		
 	<div class="sidebar-header">
 		<i class="fa fa-user"></i>
 		<span><?php echo $user->username;?></span>
@@ -170,7 +170,7 @@
 		<li role="presentation" class="divider"></li>
 		
 	</ul>
-	<div class="attribution">Powered by <a href="https://smitphb.org">SMIT Team</a></div>
+	<div class="attribution">Powered by <a href="http://fb.com/fredy.nurapriyanto">SMIT Team</a></div>
 </div><!--/.sidebar-->
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
@@ -179,163 +179,196 @@
 			<li><a href="#"><i class="fa fa-list-alt"></i></a></li>
 			<li>Pemilih</li>
 			<li class="active"><?php echo $nama_prodi;?></li>
-			<li class="active"><?php echo $smt.' '.$kelas;?></li>
 		</ol>
 	</div><!--/.row-->        
 	
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header"><?php echo $nama_prodi;?></h2>
+			<h1 class="page-header"><?php echo $nama_prodi;?></h1>
 		</div>
+		<?php if($this->session->flashdata('info-umum')): ?>
+				<div class="alert alert-warning">
+				<?php echo $this->session->flashdata('info-umum'); ?>
+			</div>
+		<?php endif; ?>
 	</div><!--/.row-->
-		
+
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Data Kelas <?php echo $smt." ".$kelas;?></div>
-				<div class="panel-body">
-				<?php if($this->session->flashdata('info')): ?>
-					<div class="alert alert-warning">
-						<?php echo $this->session->flashdata('info'); ?>
+		      <div class="panel-heading">Jumlah Kelas</div>
+		      <div class="panel-body">
+		      	<div class="row">
+		      		<div class="col-xs-12 col-md-8 col-md-offset-2">
+		      		<?php if($this->session->flashdata('info')): ?>
+		      				<div class="alert alert-warning">
+		    					<?php echo $this->session->flashdata('info'); ?>
+		    				</div>
+		    			<?php endif; ?>
+			      		<?php
+						$name = array(
+							'name'=>'addKelas',
+							'class'=>'form-inline'
+							); 
+						echo form_open('admin/pemilih/addKelas/'.$prodi, $name);
+						?>
+							<div class="form-group">
+						    	<label for="smt">Semester</label>
+						    	<select class="fomr-control" placeholder="Semester" name="smt">
+						    		<option value="1">1</option>
+						    		<option value="3">3</option>
+						    		<option value="5">5</option>
+						    		<?php 
+						    			if($prodi == 'ti'){ 
+						    				echo '<option value="7">7</option>';
+						    			} 
+						    		?>
+						    	</select>
+						  	</div>
+						  	<div class="form-group">
+						    	<label for="jumlah">Jumlah</label>
+						    	<input type="text" class="form-control" id="jumlah" placeholder="Jumlah" name="jumlah">
+						  	</div>
+						  	<button type="submit" class="btn btn-success">Simpan</button>
+						</form>
 					</div>
-				<?php endif; ?>
-				<a href="<?php echo base_url('admin/pemilih/add_pemilih/'.$prodi.'/'.$smt.'/'.$kelas);?>" class="btn btn-success btn-sm btn-add"><i class="fa fa-user-plus"></i> Tambah Data</a>
-				&nbsp;
-				<a href="#" onclick="functionLock('<?php echo base_url('admin/pemilih/lockAll/'.$prodi.'/'.$smt.'/'.$kelas);?>')" class="btn btn-warning btn-sm"><i class="fa fa-lock"></i> Lock All</a>
-				<a href="#" onclick="functionUnlock('<?php echo base_url('admin/pemilih/unlockAll/'.$prodi.'/'.$smt.'/'.$kelas);?>')" class="btn btn-info btn-sm"><i class="fa fa-unlock"></i> Unlock All</a>
-				<div class="table-responsive">
-					<table id="table" class="table table-striped table-condensed table-hover table-bordered">
-						<thead>
-							<tr class="info">
-								<th>No</th>
-								<th>Username</th>	      					
-								<th>Nama</th>
-								<th>Lock by</th>
-								<th>Unlock by</th>
-								<th>Presma</th>
-								<th>Kahim</th>
-								<th>Action</th>
-							</tr>
-						</thead>
-						<tbody>
-						<?php 
-							if(!$pemilih==null){
-								foreach($pemilih as $data){;?>
-							<tr>
-								<td><?php echo $no++;?></td>
-								<td><?php echo $data->username;?></td>
-								<td><?php echo $data->first_name.' '.$data->last_name;?></td>
+		      	</div>
+		      </div>
+		    </div>
+		</div>
+	</div><!--/.row-->
+	
+	<?php if(isset($jumlah)) {
+		
+		foreach($jumlah as $j){
+			
+		}
 
-								<?php 
-									if($data->lock_by==null){ ?>
-										<td>-</td>
-								<?php } else {?>
-										<td><?php echo $data->lock_by;?></td>
-								<?php }
-									if($data->unlock_by==null){ ?>
-										<td>-</td>
-								<?php } else {?>
-										<td><?php echo $data->unlock_by;?></td>
-								<?php }?>
-
-								<?php if($data->status_presma==0){?>
-									<td class="text-center">Belum</td>
-								<?php } else{?>
-									<td class="text-center">Sudah</td>
-								<?php } 
-									if($data->status_kahim==0){ ?>
-									<td>Belum</td>
-								<?php } else{?>
-									<td>Sudah</td>
-								<?php } ?>
-								<td class="text-center">
-									<?php if($data->active==0){?>
-										<a href="<?php echo base_url('admin/pemilih/unlock/'.$data->id.'/'.$prodi.'/'.$smt.'/'.$kelas);?>" class="btn btn-info btn-xs"><i class="fa fa-lock"></i> Buka</a>
-									<?php } else{?>
-										<a href="<?php echo base_url('admin/pemilih/lock/'.$data->id.'/'.$prodi.'/'.$smt.'/'.$kelas);?>" class="btn btn-info btn-xs"><i class="fa fa-unlock"></i> Kunci</a>
-									<?php }?>
-									
-									<a href="<?php echo base_url('admin/pemilih/edit_pemilih/'.$data->id.'/'.$prodi.'/'.$smt.'/'.$kelas);?>" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
-									<a href="#" onclick="functionDelete('<?php echo base_url('admin/pemilih/del_pemilih/'.$data->id.'/'.$prodi.'/'.$smt.'/'.$kelas);?>')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
-								</td>
-							</tr>
-							<?php }
-						} else { ?>
-							<tr>
-								<td colspan="8" class="text-center">Tidak Ada Data</td>
-							</tr>
-						<?php } ?>
-						
-						</tbody>
-					</table>
-				</div>
+		?>
+	
+	<div class="row">
+		<div class="col-md-6 left">
+			<div class="panel-group">
+				<div class="panel panel-orange">
+				    <div class="panel-heading" data-toggle="collapse" href="#collapse1">
+					    <h4 class="panel-title">
+				    	    Semester 1
+				    	</h4>
+				    </div>
+				    <div id="collapse1" class="panel-collapse collapse">
+				    	<div class="panel-body">
+							<?php 
+								$jml = $jumlah[0]->jumlah == '' ? 0:$jumlah[0]->jumlah;
+				    			if($jml==0){
+				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
+				    			}else{
+				    				for($i=0;$i<$jml;$i++){?>
+				    				<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/1/'.$kelas[$i]);?>" class="btn btn-info"><?php echo 'Kelas '.$kelas[$i];?></a>
+				    				<br>
+				    		<?php } 
+				    			} ?>
+				    	</div>
+				    </div>
 				</div>
 			</div>
 		</div>
+		<div class="col-md-6 right">
+			<div class="panel-group">
+				<div class="panel panel-orange">
+				    <div class="panel-heading" data-toggle="collapse" href="#collapse2">
+					    <h4 class="panel-title">
+				    	    Semester 3
+				    	</h4>
+				    </div>
+				    <div id="collapse2" class="panel-collapse collapse">
+				    	<div class="panel-body">
+				    		<?php 
+								$jml = $jumlah[1]->jumlah == '' ? 0:$jumlah[0]->jumlah;
+				    			if($jml==0){
+				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
+				    			}else{
+				    				for($i=0;$i<$jml;$i++){?>
+				    				<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/3/'.$kelas[$i]);?>" class="btn btn-info"><?php echo 'Kelas '.$kelas[$i];?></a>
+				    				<br>
+				    		<?php } 
+				    			} ?>
+				    	</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 left">
+			<div class="panel-group">
+				<div class="panel panel-orange">
+				    <div class="panel-heading" data-toggle="collapse" href="#collapse3">
+					    <h4 class="panel-title">
+				    	    Semester 5
+				    	</h4>
+				    </div>
+				    <div id="collapse3" class="panel-collapse collapse">
+				    	<div class="panel-body">
+				    		<?php 
+				    			$jml = $jumlah[2]->jumlah == '' ? 0:$jumlah[0]->jumlah;
+				    			if($jml==0){
+				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
+				    			}else{
+				    				for($i=0;$i<$jml;$i++){?>
+				    				<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/5/'.$kelas[$i]);?>" class="btn btn-info" style="color:#fff;display:block;text-align:center;"><?php echo 'Kelas '.$kelas[$i];?></a>
+				    				<br>
+				    		<?php } 
+				    			} ?>
+				    	</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	<?php if($prodi == 'ti'){ ?>
+		<div class="col-md-6 right">
+			<div class="panel-group">
+				<div class="panel panel-orange">
+				    <div class="panel-heading" data-toggle="collapse" href="#collapse4">
+					    <h4 class="panel-title">
+				    	    Semester 7
+				    	</h4>
+				    </div>
+				    <div id="collapse4" class="panel-collapse collapse">
+				    	<div class="panel-body">
+							<?php
+								$jml = 0;
+								// if(isset($jumlah[3])){
+								// 	$jml = $jumlah[3]->jumlah;
+								// }
+								
+				    			if($jml == 0){
+				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
+				    			} else {
+				    				for($i=0;$i<$jml;$i++){ ?>
+				    					<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/7/'.$kelas[$i]);?>" class="btn btn-info" style="color:#fff;display:block;text-align:center;"><?php echo 'Kelas '.$kelas[$i];?></a>
+				    				<br>
+				    		<?php 	} 
+				    			} ?>
+				    	</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
+
+	<?php } ?>
+
 	</div><!--/.row-->
+
 
 </div>	<!--/.main-->
 <script>
 
-	function functionLock(url){
-		swal({
-		title: 'Apakah Anda Yakin?',
-		text: "Anda akan mengunci semua yang dipilih!",
-		type: 'warning',
-		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		confirmButtonText: 'Yes, Lock all!',
-		cancelButtonText: 'No, cancel!',
-		confirmButtonClass: 'btn btn-success',
-		cancelButtonClass: 'btn btn-danger',
-		buttonsStyling: false
-		}).then(function () {
-			swal("Terkunci!", "Data berhasil dikunci!", "success");
-			window.location = url;
-
-		}, function (dismiss) {
-		// dismiss can be 'cancel', 'overlay',
-		// 'close', and 'timer'
-		if (dismiss === 'cancel') {
-			swal("Cancelled", "Data gagal dikunci!", "error")
-		}
-
-		});
-	}
-
-	function functionUnlock(url){
-		swal({
-		title: 'Apakah Anda Yakin?',
-		text: "Anda akan membuka kunci semua yang dipilih!",
-		type: 'warning',
-		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		confirmButtonText: 'Yes, Unlock all!',
-		cancelButtonText: 'No, cancel!',
-		confirmButtonClass: 'btn btn-success',
-		cancelButtonClass: 'btn btn-danger',
-		buttonsStyling: false
-		}).then(function () {
-			swal("Terbuka!", "Kunci data berhasil dibuka!", "success");
-			window.location = url;
-
-		}, function (dismiss) {
-		// dismiss can be 'cancel', 'overlay',
-		// 'close', and 'timer'
-		if (dismiss === 'cancel') {
-			swal("Cancelled", "Kunci data gagal dibuka!", "error")
-		}
-
-		});
-	}
-
 	$(window).on('resize', function () {
-		if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+	  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
 	})
 	$(window).on('resize', function () {
-		if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+	  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 	})
 </script>
 

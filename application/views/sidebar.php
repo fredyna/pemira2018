@@ -16,37 +16,37 @@
 			</a>
 			<ul class="children collapse in" id="data-pemilih">
 				<li>
-					<a class="active" href="<?php echo base_url('admin/pemilih/ti/');?>">
+					<a class="active" href="<?php echo base_url('admin/pemilih/index/ti/');?>">
 						<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
 						 D4 Teknik Informatika
 					</a>
 				</li>
 				<li>
-					<a class="" href="<?php echo base_url('admin/pemilih/ak/');?>">
+					<a class="" href="<?php echo base_url('admin/pemilih/index/ak/');?>">
 						<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
 						 D3 Akuntansi
 					</a>
 				</li>
 				<li>
-					<a class="" href="<?php echo base_url('admin/pemilih/kb/');?>">
+					<a class="" href="<?php echo base_url('admin/pemilih/index/kb/');?>">
 						<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
 						 D3 Kebidanan
 					</a>
 				</li>
 				<li>
-					<a class="" href="<?php echo base_url('admin/pemilih/fm/');?>">
+					<a class="" href="<?php echo base_url('admin/pemilih/index/fm/');?>">
 						<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
 						 D3 Farmasi
 					</a>
 				</li>
 				<li>
-					<a class="" href="<?php echo base_url('admin/pemilih/kom/');?>">
+					<a class="" href="<?php echo base_url('admin/pemilih/index/kom/');?>">
 						<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
 						 D3 Komputer
 					</a>
 				</li>
 				<li>
-					<a class="" href="<?php echo base_url('admin/pemilih/tm/');?>">
+					<a class="" href="<?php echo base_url('admin/pemilih/index/tm/');?>">
 						<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
 						 D3 Teknik Mesin
 					</a>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Laporan Hasil Pemira 2017</title>
+	<title>Laporan Hasil Pemira <?php echo date('Y');?></title>
 	<link rel="shorcut icon" href="<?php echo base_url('assets/images/pemilu.ico');?>" types="images/x-icon">
 	<style type="text/css">
 		table {
@@ -31,7 +31,7 @@
 	?>
 	<h4 style="text-align: center;">LAPORAN HASIL PEMIRA</h4>
   <h4 style="text-align: center;">POLITEKNIK HARAPAN BERSAMA</h4>
-  <h4 style="text-align: center;margin-top: 0px;">TAHUN 2017</h4>
+  <h4 style="text-align: center;margin-top: 0px;">TAHUN <?php echo date('Y');?></h4>
   <br /><br />
   <h5>Laporan Hasil Pemilihan Presma</h5>
 	<table border="1" style="width: 100%;">
@@ -275,7 +275,7 @@
   </table>
 
   <br /><br />
-  <p><span style="color:red;">*</span><b> Note</b> : Hasil akhir perhitungan ini murni dari perhitungan suara yang masuk pada sistem, tidak ada rekayasa dari panitia Pemira KM PHB 2017 dan tim pengembang sistem ini.</p>
+  <p><span style="color:red;">*</span><b> Note</b> : Hasil akhir perhitungan ini murni dari perhitungan suara yang masuk pada sistem, tidak ada rekayasa dari panitia Pemira KM PHB <?php echo date('Y');?> dan tim pengembang sistem ini.</p>
   <p style="text-align: center;">~ Fredy Nur Apriyanto - Chief Technology Officer (CTO) on <b>SMIT</b> ~</p>
 	
 </body>

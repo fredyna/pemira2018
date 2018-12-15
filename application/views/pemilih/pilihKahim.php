@@ -29,7 +29,7 @@
 		<div class="col-sm-6">
 			<h3>PEMILIHAN RAYA</h3>
 			<h3>POLITEKNIK HARAPAN BERSAMA</h3>
-			<h3>TAHUN 2017</h3>
+			<h3>TAHUN <?php echo date('Y');?></h3>
 		</div>
 		<div class="col-sm-3">
 			<img src="<?php echo base_url('assets/images/bpm.png')?>" alt="Logo Pemira" id="logopemira">
@@ -153,7 +153,7 @@
 	</div>
 
 	<footer>
-	    <p class="text-center">&copy; 2017 BPM KM PHB Developed by <a href="http://smitcomunity.com/" target="__blank" style="color:#000;">SMIT TEAM</p>
+	    <p class="text-center">&copy; <?php echo date('Y');?> BPM KM PHB Developed by <a href="http://smitcomunity.com/" target="__blank" style="color:#000;">SMIT TEAM</p>
 	</footer>
 
 </body>

@@ -17,7 +17,6 @@ class Pemilih extends CI_Controller {
 		$data['user']		= $this->ion_auth->user()->row();
 		$data['group']		= $this->ion_auth->get_users_groups($data['user']->id)->row();
 		$data['title']		= 'Admin | Pemilih'; 
-		$data['content']	= 'admin/pemilih/pemilih';
 		$data['prodi']		= $prodi;
 		$data['nama_prodi']	= $this->getNamaProdi($prodi);
 
@@ -25,7 +24,13 @@ class Pemilih extends CI_Controller {
 			$data['kelas'] = array('A','B','C','D','E','F','G','H','I','J',
 								'K','L','M','N','O','P','Q','R','S','T',
 								'U','V','W','X','Y','Z');
-			$data['jumlah'] = $this->m_admin->getKelas($prodi)->result();
+			if($this->m_admin->getKelas($prodi)->result() != null){
+				$data['jumlah'] = $this->m_admin->getKelas($prodi)->result();
+			} 
+			
+			$data['content']	= 'admin/pemilih/pemilih';
+		} else {
+			$data['content']	= 'admin/pemilih/pemilih_te';
 		}
 
 		$this->load->view('template',$data);

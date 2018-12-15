@@ -1,28 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#"><span>PEMIRA</span>PHB 2017</a>
-			<ul class="user-menu">
-				<li class="dropdown pull-right">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><i class="fa fa-user"></i> <?php echo $user->username;?><span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="<?php echo base_url('admin/c_admin/settings'); ?>"><i class="fa fa-cog"></i> Settings</a></li>
-						<li><a href="<?php echo base_url('auth/logout'); ?>"><i class="fa fa-sign-out"></i> Logout</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-						
-	</div><!-- /.container-fluid -->
-</nav>
-
-<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+ <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		
 	<div class="sidebar-header">
 		<i class="fa fa-user"></i>
@@ -194,7 +170,7 @@
 		<li role="presentation" class="divider"></li>
 		
 	</ul>
-	<div class="attribution">Powered by <a href="http://fb.com/fredy.nurapriyanto">SMIT Team</a></div>
+	<div class="attribution">Powered by <a href="https://smitphb.org">SMIT Team</a></div>
 </div><!--/.sidebar-->
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
@@ -261,127 +237,82 @@
 		    </div>
 		</div>
 	</div><!--/.row-->
-	
-	<div class="row">
-		<div class="col-md-6 left">
-			<div class="panel-group">
-				<div class="panel panel-orange">
-				    <div class="panel-heading" data-toggle="collapse" href="#collapse1">
-					    <h4 class="panel-title">
-				    	    Semester 1
-				    	</h4>
-				    </div>
-				    <div id="collapse1" class="panel-collapse collapse">
-				    	<div class="panel-body">
-							<?php 
-								$jml = 0;
-								if(!empty($jumlah)){
-									$jml = $jumlah[0]->jumlah;
-								}
-				    			if($jml==0){
-				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
-				    			}else{
-				    				for($i=0;$i<$jml;$i++){?>
-				    				<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/1/'.$kelas[$i]);?>" class="btn btn-info"><?php echo 'Kelas '.$kelas[$i];?></a>
-				    				<br>
-				    		<?php } 
-				    			} ?>
-				    	</div>
-				    </div>
+
+
+	<?php if(isset($jumlah)) {
+		echo '<div class="row"> <div class="col-lg-12">';
+		foreach($jumlah as $j){	
+			if($j->smt == 1 OR $j->smt == 3) {
+	?>
+			<div class="col-md-6 left">
+				<div class="panel-group">
+					<div class="panel panel-orange">
+						<div class="panel-heading" data-toggle="collapse" href="#collapse<?php echo $j->smt;?>">
+							<h4 class="panel-title">
+								Semester <?php echo $j->smt;?>
+							</h4>
+						</div>
+						<div id="collapse<?php echo $j->smt;?>" class="panel-collapse collapse">
+							<div class="panel-body">
+								<?php 
+									$jml = $j->jumlah;
+									if($jml==0){
+										echo '<p class="text-center>Tidak Ada Kelas</p>';
+									}else{
+										for($i=0;$i<$jml;$i++){?>
+										<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/'.$j->smt.'/'.$kelas[$i]);?>" class="btn btn-info"><?php echo 'Kelas '.$kelas[$i];?></a>
+										<br>
+								<?php } 
+									} ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-6 right">
-			<div class="panel-group">
-				<div class="panel panel-orange">
-				    <div class="panel-heading" data-toggle="collapse" href="#collapse2">
-					    <h4 class="panel-title">
-				    	    Semester 3
-				    	</h4>
-				    </div>
-				    <div id="collapse2" class="panel-collapse collapse">
-				    	<div class="panel-body">
-				    		<?php 
-				    			$jml = 0;
-								if(!empty($jumlah)){
-									$jml = $jumlah[1]->jumlah;
-								}
-				    			if($jml==0){
-				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
-				    			}else{
-				    				for($i=0;$i<$jml;$i++){?>
-				    				<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/3/'.$kelas[$i]);?>" class="btn btn-info"><?php echo 'Kelas '.$kelas[$i];?></a>
-				    				<br>
-				    		<?php } 
-				    			} ?>
-				    	</div>
-				    </div>
+	<?php	 
+			}
+		} 
+		echo '</div> </div>';
+	?>
+
+	<?php 
+		echo '<div class="row"> <div class="col-lg-12">';
+		foreach($jumlah as $j2){	
+			if($j2->smt == 5 OR $j2->smt == 7) {
+	?>
+			<div class="col-md-6 left">
+				<div class="panel-group">
+					<div class="panel panel-orange">
+						<div class="panel-heading" data-toggle="collapse" href="#collapse<?php echo $j2->smt;?>">
+							<h4 class="panel-title">
+								Semester <?php echo $j2->smt;?>
+							</h4>
+						</div>
+						<div id="collapse<?php echo $j2->smt;?>" class="panel-collapse collapse">
+							<div class="panel-body">
+								<?php 
+									$jml = $j2->jumlah;
+									if($jml==0){
+										echo '<p class="text-center>Tidak Ada Kelas</p>';
+									}else{
+										for($i=0;$i<$jml;$i++){?>
+										<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/'.$j2->smt.'/'.$kelas[$i]);?>" class="btn btn-info"><?php echo 'Kelas '.$kelas[$i];?></a>
+										<br>
+								<?php } 
+									} ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 left">
-			<div class="panel-group">
-				<div class="panel panel-orange">
-				    <div class="panel-heading" data-toggle="collapse" href="#collapse3">
-					    <h4 class="panel-title">
-				    	    Semester 5
-				    	</h4>
-				    </div>
-				    <div id="collapse3" class="panel-collapse collapse">
-				    	<div class="panel-body">
-				    		<?php 
-				    			$jml = 0;
-								if(!empty($jumlah)){
-									$jml = $jumlah[2]->jumlah;
-								}
-				    			if($jml==0){
-				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
-				    			}else{
-				    				for($i=0;$i<$jml;$i++){?>
-				    				<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/5/'.$kelas[$i]);?>" class="btn btn-info" style="color:#fff;display:block;text-align:center;"><?php echo 'Kelas '.$kelas[$i];?></a>
-				    				<br>
-				    		<?php } 
-				    			} ?>
-				    	</div>
-				    </div>
-				</div>
-			</div>
-		</div>
-	<?php if($prodi == 'ti'){ ?>
-		<div class="col-md-6 right">
-			<div class="panel-group">
-				<div class="panel panel-orange">
-				    <div class="panel-heading" data-toggle="collapse" href="#collapse4">
-					    <h4 class="panel-title">
-				    	    Semester 7
-				    	</h4>
-				    </div>
-				    <div id="collapse4" class="panel-collapse collapse">
-				    	<div class="panel-body">
-				    		<?php
-			    				$jml = 0;
-								if(!empty($jumlah)){
-									$jml = $jumlah[3]->jumlah;
-								}
-				    			if($jml==0){
-				    				echo '<p class="text-center>Tidak Ada Kelas</p>';
-				    			}else{
-				    				for($i=0;$i<$jml;$i++){?>
-				    				<a href="<?php echo base_url('admin/pemilih/daftarPemilih/'.$prodi.'/7/'.$kelas[$i]);?>" class="btn btn-info" style="color:#fff;display:block;text-align:center;"><?php echo 'Kelas '.$kelas[$i];?></a>
-				    				<br>
-				    		<?php } 
-				    			} ?>
-				    	</div>
-				    </div>
-				</div>
-			</div>
-		</div>
+	<?php
+			} 
+		} 
+		echo '</div></div>';
+	?>
+
 	<?php } ?>
-
-	</div><!--/.row-->
-
+</div>
 
 </div>	<!--/.main-->
 <script>

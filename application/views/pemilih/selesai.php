@@ -29,7 +29,7 @@
 			<p style="font-family: 'Times New Roman'; color:#fff;font-size: 20px;">Satu suara dari Anda ikut menentukan perubahan di masa depan</p><br />
 			<a href="<?php echo base_url('pemilih/pemilih/logout');?>" class="btn btn-success"><i class="fa fa-sign-out"></i> KELUAR</a>
 			<br /><br /><br /><br /><br />
-		    <p class="text-center" style="color:#fff;font-family: 'Times New Roman';">&copy; 2017 BPM KM PHB Developed by SMIT TEAM</p>
+		    <p class="text-center" style="color:#fff;font-family: 'Times New Roman';">&copy; <?php echo date('Y');?> BPM KM PHB Developed by SMIT TEAM</p>
 		</div>
 	</div>
 

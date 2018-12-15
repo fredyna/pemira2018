@@ -14,11 +14,12 @@ class Pemilih extends CI_Controller {
 
 	public function index()
 	{
+		$this->pilihPresma();
 		$this->cekKahim();
 		redirect('pemilih/pemilih/pilihKahim');
 	}
 
-	/*function cekPresma(){
+	function cekPresma(){
 		$user = $this->ion_auth->user()->row();
 		$presma = $user->status_presma;
 		if($presma==1){
@@ -39,7 +40,7 @@ class Pemilih extends CI_Controller {
 		$data['title']	= 'Pemilih | Pemira KM PHB 2017';
 		$data['presma'] = $this->m_calon->getCalonPresma(); 
 		$this->load->view('pemilih/pilihPresma',$data);
-	}*/
+	}
 
 	function cekKahim(){
 		$user = $this->ion_auth->user()->row();
@@ -50,6 +51,7 @@ class Pemilih extends CI_Controller {
 	}
 
 	function pilihKahim(){
+		$this->cekBackPresma();
 		$this->cekKahim();
 		$data['user'] = $this->ion_auth->user()->row();
 		$data['title']	= 'Pemilih | Pemira KM PHB 2017';
@@ -72,7 +74,7 @@ class Pemilih extends CI_Controller {
 		}
 	}
 
-	/*public function pilihanPresma($id=null){
+	public function pilihanPresma($id=null){
 		if($id==null){
 			redirect('pemilih/pemilih');
 		}
@@ -98,7 +100,7 @@ class Pemilih extends CI_Controller {
 		}
 
 
-	}*/
+	}
 
 	public function pilihanKahim($id=null){
 		if($id==null){
